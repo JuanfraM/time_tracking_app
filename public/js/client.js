@@ -1,6 +1,15 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 window.client = (function () {
+  return {
+    getTimers,
+    createTimer,
+    updateTimer,
+    startTimer,
+    stopTimer,
+    deleteTimer,
+  };
+
   function getTimers(success) {
     return fetch('/api/timers', {
       headers: {
@@ -81,13 +90,4 @@ window.client = (function () {
   function parseJSON(response) {
     return response.json();
   }
-
-  return {
-    getTimers,
-    createTimer,
-    updateTimer,
-    startTimer,
-    stopTimer,
-    deleteTimer,
-  };
 }());
